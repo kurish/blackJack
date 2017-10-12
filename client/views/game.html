@@ -1,0 +1,54 @@
+<div ng-controller="gameController" ng-init="init()" class="table">
+  <div class="gameContent">
+    <div class="sorryContent" ng-show="!loginned">
+    <div class="sorryText">Sorry :(</div>
+    <div class="toLogin">
+      You need to be logged in to play Blackjack.
+      <div class="buttonDiv">
+        <button class="button red" ng-click="toLogin()">Go to log in page</button>
+      </div>
+    </div>
+    </div>
+    <div class="sorryContent top" ng-show="showPopup" ng-click="closePopUp()">
+    <div class="sorryText">{{popUp.topmsg}}</div>
+    <div class="toLogin">
+      {{popUp.msg}}
+      <div class="buttonDiv">
+        (click to close)
+      </div>
+    </div>
+    </div>
+    <div class="croupierCardsContent" ng-show="loginned && gameLive">
+      <div ng-repeat="card in croupierCards" class="cardHolder">
+        <img class="croupierCard" src="../images/cards/{{card.name}}.png"></img>
+      </div>
+    </div>
+    <div class="userCardsContent" ng-show="loginned && gameLive" style="margin: auto">
+      <div ng-repeat="card in userCards" class="cardHolder">
+        <img class="userCard" src="../images/cards/{{card.name}}.png"></img>
+      </div>
+      <!--<div class="score">
+        Current score: {{currentScore}}
+        <div style="padding-top: 10px" ng-show="possibleScore.active">
+          Possible score: {{possibleScore.value}}
+        </div>
+      </div> -->
+    </div>
+  <div class="gameButtonsContent" ng-show="loginned">
+    <div ng-repeat="button in gameButtons">
+    <button class="button red gameButton" ng-click="clickButton(button)">{{button.value}}</button>
+    </div>
+  </div>
+  <div class="yourBet">Your bet: {{betSize}} $</div>
+  <div class="betContent" ng-show="loginned">
+    <div class="chip" ng-repeat="chip in chips">
+      <img src="{{chip.img}}" ng-click="addBet(chip.value)"></img>
+    </div>
+  </div>
+</div>
+<div class="userInfoContent">
+  <div class="username">{{username}}</div>
+  <div class="yourBet"> Your bet: {{betSize || 0}}</div>
+  <div class="userMoney">On the account now: {{moneyAmount}} $</div>
+</div>
+</div>

@@ -1,0 +1,39 @@
+<head>
+  <script type="application/javascript" src="js/angular.js"></script>
+  <link rel="stylesheet" href="css/main.css">
+  <title>Black Jack</title>
+  <script type="application/javascript" src="js/logic/app.js"></script>
+  <script type="application/javascript" src="js/logic/masterController.js"></script>
+  <script type="application/javascript" src="js/logic/statController.js"></script>
+  <script type="application/javascript" src="js/logic/homeController.js"></script>
+  <script type="application/javascript" src="js/logic/gameController.js"></script>
+  <script type="application/javascript" src="js/jquery.js"></script>
+  <script type="application/javascript" src="js/logic/helpers.js"></script>
+  <script type="application/javascript" src="js/socket.io.js"></script>
+
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+</head>
+
+<body ng-app="blackjackapp", ng-controller="masterController">
+<nav class="nav">
+  <div class="logo">
+    <img class="logoImg" src="../images/logo.png" alt="">
+  </div>
+  <div class="navButton" ng-click="navigate('stat')">
+    <a class="navButtonText">stat</a>
+  </div>
+  <div class="navButton" ng-click="navigate('game')">
+    <a class="navButtonText">game</a>
+  </div>
+  <div class="navButton" ng-click="navigate('Home')">
+    <a class="navButtonText">Home</a>
+  </div>
+</nav>
+
+<div class="content">
+<any ng-include="loadView()"></any>
+</div>
+
+
+</div>
+</body>

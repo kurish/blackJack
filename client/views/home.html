@@ -1,0 +1,67 @@
+<div class="homeContent" ng-controller="homeController" ng-init="init()">
+
+      <div class="loginForm" ng-show="!register && !loginned">
+        <form ng-submit="submitLogin()">
+        <label for="username">Username</label>
+        <input type="text" ng-model="usernameFromForm" name="Username" class="form-control" required/>
+        <label for="Password">Password</label>
+        <input type="password" name="Password" ng-model="passwordFromForm" class="form-control" required/>
+        <input type="submit" value="Log in" class="button red"/>
+      </form>
+      <button class="button red" ng-click="switchAuth()">Sign up</button>
+      <div class="formResponse">
+        {{LoginFormMessage}}
+      </div>
+      </div>
+
+
+
+    <div class="registerForm" ng-show="register && !loginned">
+      <form ng-submit="submitRegister()">
+      <label for="username">Username</label>
+      <input type="text" ng-model="usernameFromForm" name="Username" class="form-control" required/>
+      <label for="password">Password</label>
+      <input type="password" name="Password" ng-model="passwordFromForm" class="form-control" required/>
+      <label for="email">Email</label>
+      <input type="text" name="email" ng-model="emailFromForm" class="form-control" required/>
+      <input type="submit" value="Register" class="button red">
+    </form>
+        <button class="button red" ng-click="switchAuth()">Back to log in</button>
+        <div class="formResponse">
+          {{RegisterFormMessage}}
+        </div>
+    </div>
+
+    <div class="welcomeContent" ng-show="loginned">
+      Welcome to us, {{username}}!
+      <button class="button red" id="logout" ng-click="Logout()">Log out</button>
+    </div>
+
+    <div class="lastGames" ng-show="loginned">
+      <div style="text-align: center;">
+        <!-- userCards date croupierCards winner -->
+        Your last game:
+        <div class="lastGame">
+          <div class="winner">Winner: {{lastGame.winner}}</div>
+          <div>{{lastGame.date}}</div>
+          <div style="display: flex">
+            <div class="croupierCards" ng-repeat="card in lastGame.croupierCards">
+              <div style="display: flex">
+                <img src="../images/cards/{{card.name}}.png"></img>
+              </div>
+            </div>
+          </div>
+          <div style="display: flex">
+          <div class="userCards" ng-repeat="card in lastGame.userCards" style="display: flex">
+            <div style="display: flex">
+              <img src="../images/cards/{{card.name}}.png"></img>
+            </div>
+          </div>
+        </div>
+        </div>
+      </div>
+    </div>
+
+
+
+</div>

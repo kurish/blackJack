@@ -1,0 +1,313 @@
+.table {
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  background-image: url("../images/black_jack_table_pack.jpg");
+}
+
+.homeContent {
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  background-image: url("../images/start_page_bg_1.jpg");
+}
+
+.statContent {
+  display: flex;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  background-image: url("../images/start_page_bg_1.jpg");
+}
+
+.betContent {
+  position: absolute;
+  display: flex;
+  bottom: 16%;
+  left: 36%;
+}
+
+.chip {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.gameButtonsContent {
+  position: absolute;
+  display: flex;
+  bottom: 9%;
+  left: 34%;
+}
+
+.gameButton {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.userInfoContent {
+  display: flex;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.username {
+  position: relative;
+  left: 2%;
+  font-size: 130%;
+  bottom: 0;
+  color: white;
+}
+
+.userMoney {
+  position: absolute;
+  right: 2%;
+  font-size: 250%;
+  bottom: 0;
+  color: white;
+}
+
+.yourBet {
+  position: absolute;
+  left: 40%;
+  font-size: 250%;
+  bottom: 0;
+  color: white;
+}
+
+
+.nav {
+  position: absolute;
+  width: 100%;
+  height: 10%;
+  padding-top: 0px;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 2;
+}
+
+.logoImg {
+  min-width: 150px;
+  width: 39%;
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background-color: grey;
+  font-family: 'Open Sans';
+}
+
+.navButton {
+  z-index: 2;
+  float: right;
+  width: 20%;
+  height: 100%;
+  background: rgba(255, 0, 0, 0.3);
+}
+
+.logo {
+    width: 40%;
+    height: 100%;
+    float: left;
+    z-index: 2;
+    background-repeat: no-repeat;
+}
+
+.form-control {
+    display: block;
+    width: 100%;
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    -webkit-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
+
+.loginForm {
+  color: white;
+  padding: 10% 35% 10% 35%;
+}
+
+.top {
+  position: absolute;
+  width: 30%;
+  height: 40%;
+  z-index: 1;
+}
+
+.score {
+  padding-top: 10px;
+  font-size: 130%;
+}
+
+
+.registerForm {
+  color: white;
+  padding: 10% 35% 10% 35%;
+}
+
+.welcomeContent
+{
+  color: white;
+  padding: 10% 35% 2% 35%;
+}
+
+.sorryContent {
+  padding: 10% 35% 10% 35%;
+  background: rgba(0, 0, 0, 0.0);
+}
+
+.userCardsContent {
+  display: flex;
+  position: absolute;
+  left: 38%;
+  right: 30%;
+  width: 50%;
+  top: 40%;
+}
+
+.croupierCardsContent {
+  display: flex;
+  position: absolute;
+  left: 38%;
+  top: 13%;
+  right: 30%;
+  width: 50%;
+}
+
+.cardHolder {
+  margin: 10px;
+}
+
+.startGameButton {
+  padding-top: 24%;
+  padding-left: 40%;
+}
+
+#startGameBtn {
+  padding: 2.5em 7em 2.55em;
+}
+
+.sorryText {
+  font-size: 400%;
+  color: white;
+  width: 100%;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.toLogin {
+  text-align: center;
+  font-size: 150%;
+  color: white;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.topMoneyContent {
+  padding-top: 5%;
+  text-align: center;
+  font-size: 150%;
+  color: white;
+  width: 33%;
+  height: 90%;
+  overflow:auto;
+}
+
+.topGamesContent {
+  padding-top: 5%;
+  text-align: center;
+  font-size: 150%;
+  color: white;
+  width: 33%;
+  height: 90%;
+  overflow:auto;
+}
+
+.topWinrateContent {
+  padding-top: 5%;
+  text-align: center;
+  font-size: 150%;
+  color: white;
+  width: 34%;
+  height: 90%;
+  overflow:auto;
+}
+
+.userStat {
+  display: flex;
+}
+
+.username {
+  padding-left: 5%
+}
+
+.userValue {
+  
+}
+
+.buttonDiv {
+  margin-top: 15%;
+}
+
+#logout {
+  float: right;
+  margin: 0;
+}
+
+
+
+.blue {
+    color: #d9eef7;
+    border: solid 1px #0076a3;
+    background: #0095cd;
+    background: -webkit-gradient(linear, left top, left bottom, from(#00adee), to(#0078a5));
+    background: -moz-linear-gradient(top, #00adee, #0078a5);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00adee', endColorstr='#0078a5');
+}
+
+.red {
+    color: #faddde;
+    border: solid 1px #980c10;
+    background: #d81b21;
+    background: -webkit-gradient(linear, left top, left bottom, from(#ed1c24), to(#aa1317));
+    background: -moz-linear-gradient(top, #ed1c24, #aa1317);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ed1c24', endColorstr='#aa1317');
+}
+
+.red:hover {
+    background: #b61318;
+    background: -webkit-gradient(linear, left top, left bottom, from(#c9151b), to(#a11115));
+    background: -moz-linear-gradient(top, #c9151b, #a11115);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#c9151b', endColorstr='#a11115');
+}
+
+.button {
+    display: inline-block;
+    zoom: 1;
+    vertical-align: baseline;
+    margin: 10px 0px;
+    outline: none;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    font: 14px/100% Arial, Helvetica, sans-serif;
+    padding: .5em 2em .55em;
+    text-shadow: 0 1px 1px rgba(0,0,0,.3);
+    -webkit-border-radius: .5em;
+    -moz-border-radius: .5em;
+    border-radius: .5em;
+    -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.2);
+    -moz-box-shadow: 0 1px 2px rgba(0,0,0,.2);
+    box-shadow: 0 1px 2px rgba(0,0,0,.2);
+}

@@ -1,0 +1,23 @@
+<div class="statContent" ng-controller="statController" ng-init="init()">
+    <div class="topMoneyContent">
+        <div style="text-align: center">Money gained</div>
+        <div class="userStat" ng-repeat='user in topMoneyGained'>
+          <div class="username">{{user.username}}</div>
+          <div class="userValue">{{user.moneyGained || 0}}</div>
+        </div>
+    </div>
+    <div class="topGamesContent">
+        <div style="text-align: center">Games played</div>
+        <div class="userStat" ng-repeat='user in topGamesPlayed'>
+          <div class="username">{{user.username}}</div>
+          <div class="userValue">{{user.gamesPlayed || 0}}</div>
+        </div>
+    </div>
+    <div class="topWinrateContent">
+        <div style="text-align: center">Winrate</div>
+        <div class="userStat" ng-repeat='user in topWinrate' align="right">
+          <div class="username" >{{user.username}}</div>
+          <div class="userValue">{{user.winrate || 0}}%</div>
+        </div>
+    </div>
+</div>
