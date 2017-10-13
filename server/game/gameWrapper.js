@@ -61,6 +61,8 @@ exports.closeGame = function (game) {
     {
       tempGame.winner = 'draw';
     }
+    tempGame.userScore = userScore;
+    tempGame.croupierScore = croupierScore;
     return tempGame;
   } catch (e) {
     console.log(e);

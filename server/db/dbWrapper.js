@@ -148,7 +148,7 @@ var getGame = function (id) {
     {
       findBy._id = id;
     }
-    return game.find(findBy, 'title cardsInPull gameState userCards date croupierCards winner username bet moneyAmount Blackjack').exec(function (err, game) {
+    return game.find(findBy, 'title cardsInPull gameState userCards date croupierCards winner username bet moneyAmount Blackjack userScore croupierScore').exec(function (err, game) {
         if (err)
         {
           console.log(err);

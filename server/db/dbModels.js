@@ -12,7 +12,9 @@ exports.gameSchema = new Schema({
   croupierCards: [{ name: String, value: Number}],
   date: { type: Date, default: Date.now },
   winner: String,
-  bet: Number
+  bet: Number,
+  userScore: Number,
+  croupierScore: Number
 });
 
 exports.userSchema = new Schema({

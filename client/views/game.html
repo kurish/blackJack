@@ -11,6 +11,8 @@
     </div>
     <div class="sorryContent top" ng-show="showPopup" ng-click="closePopUp()">
     <div class="sorryText">{{popUp.topmsg}}</div>
+    <div class="userScore" ng-show="showScore">You has: {{userScore}}</div>
+    <div class="croupierScore" ng-show="showScore">Dealer has: {{croupierScore}}</div>
     <div class="toLogin">
       {{popUp.msg}}
       <div class="buttonDiv">

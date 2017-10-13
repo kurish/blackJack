@@ -38,6 +38,7 @@ app.controller('gameController', function ($scope, apiLayer, socket, $q) {
      $scope.popUpEndGame = false;
      $scope.popUp = {};
      $scope.currentGame = {};
+     $scope.showScore = false;
      $scope.username = getCookie('username');
      $scope.password = getCookie('password');
 
@@ -103,7 +104,6 @@ app.controller('gameController', function ($scope, apiLayer, socket, $q) {
     }
   }
   $scope.updateTable = function (gameData, end) {
-
     if (!gameData.game)
     {
       if (gameData.msg == 'No money')
@@ -146,8 +146,12 @@ app.controller('gameController', function ($scope, apiLayer, socket, $q) {
     }
     else {
       console.log('create end game popup');
+      console.log(gameData);
+      $scope.showScore = true;
       $scope.userCards = gameData.game.userCards;
       $scope.croupierCards = gameData.game.croupierCards;
+      $scope.userScore = gameData.game.userScore;
+      $scope.croupierScore = gameData.game.croupierScore;
       $scope.createPopUp('end game', gameData.game.winner);
     }
   }

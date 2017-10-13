@@ -222,6 +222,22 @@ body {
   background: rgba(0, 0, 0, 0.8);
 }
 
+.userScore {
+  text-align: center;
+  font-size: 150%;
+  color: white;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.croupierScore {
+  text-align: center;
+  font-size: 150%;
+  color: white;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.8);
+}
+
 .topMoneyContent {
   padding-top: 5%;
   text-align: center;
