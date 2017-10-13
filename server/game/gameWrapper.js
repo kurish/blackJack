@@ -3,13 +3,14 @@ var dbWrapper = require("../db/dbWrapper.js");
 
 exports.startGame = function (game) {
   try {
-    var defer = q.defer();
     var tempGame = game;
     tempGame.cardsInPull = cardsShuffle(tempGame.cardsInPull);
     tempGame.userCards.push(tempGame.cardsInPull.splice(0,1)[0]);
     tempGame.croupierCards.push(tempGame.cardsInPull.splice(0,1)[0]);
     tempGame.userCards.push(tempGame.cardsInPull.splice(0,1)[0]);
     tempGame.croupierCards.push(tempGame.cardsInPull.splice(0,1)[0]);
+    console.log('startGame tempGame:');
+    console.log(tempGame);
     return tempGame;
   } catch (e) {
     console.log(e);
@@ -18,6 +19,10 @@ exports.startGame = function (game) {
 exports.getCard = function (game) {
   try {
     var tempGame = game;
+    if (!tempGame.cardsInPull)
+    {
+      return;
+    }
     tempGame.userCards.push(tempGame.cardsInPull.splice(0,1)[0]);
     return tempGame;
   } catch (e) {
@@ -38,7 +43,7 @@ exports.closeGame = function (game) {
     }
     if (userScore == 21)
     {
-        tempGame.moneyAmount = tempGame.bet * 1.5;
+        tempGame.moneyAmount = tempGame.bet * 2.5;
     }
     else
     {
@@ -80,16 +85,20 @@ var cardsShuffle = function (array) {
 var getScore = function (cardsArray) {
   var score = 0;
     var a = false;
+    var aCount = 0;
+    console.log('getScore, cardsArray:');
+    console.log(cardsArray);
     cardsArray.forEach(function (card) {
       if (card.name.indexOf('_a') != -1)
       {
+        aCount++;
         a = true;
       }
       score += card.value;
     });
     if (a)
     {
-      return getBetterScore(score, score-10);
+      return getBetterScore(score, score-(10*aCount));
     }
     else {
       return score;

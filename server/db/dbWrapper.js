@@ -13,12 +13,6 @@ var db = mongoose.connection;
 var game = mongoose.model("games" , dbModels.gameSchema);
 var user = mongoose.model("users" , dbModels.userSchema);
 
-var test = {
-  username: "kurish",
-  password: "1q2w3e4r",
-  moneyAmount: 500,
-};
-
 var createUser = function (userData) {
   try {
     var userCreate = {};
@@ -553,8 +547,9 @@ exports.createNewGame = function (userData) {
             return q.resolve(returnObj);
           }
           var createGameObj = {};
+          console.log(global.gameSettings.cards);
           createGameObj.username = userData.username;
-          createGameObj.cardsInPull = global.gameSettings.cards;
+          createGameObj.cardsInPull = global.gameSettings.cards.slice(0);
           createGameObj.gameState = global.gameSettings.gameStates.created;
           createGameObj.userCards = [];
           createGameObj.croupierCards = [];
@@ -626,12 +621,21 @@ exports.getCard = function (req) {
 exports.closeGame = function (data) {
   try {
     var returnObj = {};
+    console.log('data u close game:');
+    console.log(data);
     return getGame(data._id).then(function (gameDB) {
+      console.log('getGame:');
+      console.log(gameDB);
       if (gameDB[0].gameState != global.gameSettings.gameStates.created)
       {
         return returnObj.game = null;
       }
       var closedGame = global.gameWrapper.closeGame(gameDB[0]);
+      console.log('pered updatom:');
+      console.log('data');
+      console.log(data);
+      console.log('closedGame');
+      console.log(closedGame);
       return game.update(data, closedGame).then(function (err) {
         return getGame(data).then(function (game) {
           returnObj.game = game[0];
@@ -649,11 +653,15 @@ exports.closeGame = function (data) {
   }
 }
 
-
 //deleteGames();
 //deleteUsers();
 
 /*
+
+game.find({_id: '59e0c27c699bd41c88a7da4e'}).then(function (game) {
+  console.log(game);
+});
+
 getGame().then(function (game) {
   console.log(game);
 });

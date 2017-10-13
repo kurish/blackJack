@@ -35,6 +35,7 @@ app.controller('gameController', function ($scope, apiLayer, socket, $q) {
     ];
      $scope.gameLive = false;
      $scope.showPopup = false;
+     $scope.popUpEndGame = false;
      $scope.popUp = {};
      $scope.currentGame = {};
      $scope.username = getCookie('username');
@@ -137,11 +138,11 @@ app.controller('gameController', function ($scope, apiLayer, socket, $q) {
           $scope.possibleScore.value -= 10;
           $scope.possibleScore.active = true;
         }
-        if (($scope.currentScore == 21) || ($scope.possibleScore.value == 21))
-        {
-          $scope.createPopUp('Blackjack');
-        }
       });
+      if (($scope.currentScore == 21) || ($scope.possibleScore.value == 21))  // ==
+      {
+        $scope.createPopUp('Blackjack');
+      }
     }
     else {
       console.log('create end game popup');
@@ -246,6 +247,7 @@ app.controller('gameController', function ($scope, apiLayer, socket, $q) {
     }
   }
   $scope.createPopUp = function (reason, winner) {
+    console.log('createPopUp');
     switch (reason) {
       case 'over':
         $scope.popUp.topmsg = "Sorry :(";
@@ -301,18 +303,21 @@ app.controller('gameController', function ($scope, apiLayer, socket, $q) {
     }
   }
   $scope.closePopUp = function () {
+    console.log('closePopUp called');
     if ($scope.popUpEndGame == true)
     {
+      console.log('$scope.popUpEndGame == true');
       $scope.showPopup = false;
       $scope.popUp = {};
       $scope.init();
     }
     else {
+      console.log('closePopUp');
       $scope.showPopup = false;
       $scope.popUp = {};
       // tut
     }
-
+    console.log('after if');
   }
 
 

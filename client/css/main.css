@@ -50,15 +50,7 @@
   bottom: 0;
   left: 0;
   right: 0;
-  background: rgba(0, 0, 0, 0.3);
-}
-
-.username {
-  position: relative;
-  left: 2%;
-  font-size: 130%;
-  bottom: 0;
-  color: white;
+  background: rgba(0, 0, 0, 0.6);
 }
 
 .userMoney {
@@ -83,8 +75,20 @@
   width: 100%;
   height: 10%;
   padding-top: 0px;
-  background: rgba(0, 0, 0, 0.3);
+  background: rgba(0, 0, 0, 0.6);
   z-index: 2;
+
+}
+
+.navButtonText {
+  font-size: 200%;
+  margin-left: 15%;
+  margin-top: 4%;
+  color: #ffc63b;
+}
+
+.navButtonText:hover {
+  color:#c37d2c;
 }
 
 .logoImg {
@@ -104,7 +108,11 @@ body {
   float: right;
   width: 20%;
   height: 100%;
-  background: rgba(255, 0, 0, 0.3);
+}
+
+.navButton:hover {
+  background: rgba(0, 0, 0, 0.6);
+  color: red;
 }
 
 .logo {
@@ -248,12 +256,26 @@ body {
   display: flex;
 }
 
+.usernameGame {
+  font-size: 250%;
+  padding-left: 5%;
+  color: white;
+}
+
 .username {
-  padding-left: 5%
+  padding-left: 2%;
+  font-size: 130%;
+  bottom: 0;
+  color: white;
+  margin-right: auto;
 }
 
 .userValue {
-  
+  padding-right: 2%;
+  font-size: 130%;
+  bottom: 0;
+  color: white;
+  margin-left: auto;
 }
 
 .buttonDiv {

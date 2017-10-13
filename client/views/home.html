@@ -23,7 +23,7 @@
       <label for="password">Password</label>
       <input type="password" name="Password" ng-model="passwordFromForm" class="form-control" required/>
       <label for="email">Email</label>
-      <input type="text" name="email" ng-model="emailFromForm" class="form-control" required/>
+      <input type="email" name="email" ng-model="emailFromForm" class="form-control" required/>
       <input type="submit" value="Register" class="button red">
     </form>
         <button class="button red" ng-click="switchAuth()">Back to log in</button>
@@ -37,11 +37,11 @@
       <button class="button red" id="logout" ng-click="Logout()">Log out</button>
     </div>
 
-    <div class="lastGames" ng-show="loginned">
+    <!-- <div class="lastGames" ng-show="loginned">
       <div style="text-align: center;">
-        <!-- userCards date croupierCards winner -->
+        userCards date croupierCards winner
         Your last game:
-        <div class="lastGame">
+        <div class="lastGame" ng-show="lastGame.found">
           <div class="winner">Winner: {{lastGame.winner}}</div>
           <div>{{lastGame.date}}</div>
           <div style="display: flex">
@@ -60,7 +60,7 @@
         </div>
         </div>
       </div>
-    </div>
+    </div>-->
 
 
 

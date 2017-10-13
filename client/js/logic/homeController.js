@@ -2,7 +2,7 @@ app.controller('homeController', function ($scope, apiLayer, socket, $q) {
 
   $scope.init = function () {
     $scope.register = false;
-    $scope.lastGames = [];
+    //$scope.lastGame = {};
     checkIfLogged();
   }
 
@@ -102,11 +102,19 @@ var checkIfLogged = function () {
     }
     var options = {};
     options.username = username;
-    apiLayer.apiPostCall('api/getLastGame', options).then(function (data) {
+    /*apiLayer.apiPostCall('api/getLastGame', options).then(function (data) {
+      console.log('getLastGame:');
       console.log(data);
-      $scope.lastGame = data.game;
-      $scope.lastGame.date = $scope.lastGame.date.substr(0, $scope.lastGame.date.indexOf('T'));
-    });
+      if (data.game)
+      {
+        $scope.lastGame.found = true;
+        $scope.lastGame = data.game;
+        $scope.lastGame.date = $scope.lastGame.date.substr(0, $scope.lastGame.date.indexOf('T'));
+      }
+      else {
+        $scope.lastGame.found = false;
+      }
+    });*/
   } catch (e) {
     console.log(e);
   }
